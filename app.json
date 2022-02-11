@@ -4,5 +4,5 @@
     "repository": "https://github.com/pigey/sti-frontend",
     "logo": "https://cdn.rawgit.com/heroku/node-js-getting-started/main/public/node.svg",
     "keywords":["node", "express", "heroku"],
-    "image": "heroku/node.js"
+    "image": "heroku/nodejs"
 }

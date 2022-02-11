@@ -1,6 +1,6 @@
 const express = require("express")
-var favicon = require ('serve-favicon')
-var path = require('path')
+var favicon = require ("serve-favicon")
+var path = require("path")
 
 
 const PORT = process.env.PORT || 3000
@@ -16,5 +16,5 @@ app.get("/", function(req, res){
 })
 
 app.listen(PORT, function(){
-    console.log('Server started on port ${PORT}')
+    console.log("Server started on port ${PORT}")
 });

@@ -1,17 +1,26 @@
 *{
     padding: 0;
     margin: 0;
+    
+}
+body{
+    background-color: gray;
 }
 #app{
     width: 100%;
     height: 100%;
+    display: inline-block;
+    margin-top: 5%;
 }
 #game{
     width: 50%;
     height: 50vh;
     border: 1px solid black;
-    margin-top: 5%;
     margin-left: 5%;
+    display: inline-block;
+    background-image: url(/public/game-background.png);
+    background-size:cover;
+    
 }
 .timer{
     width: 20%;
@@ -29,7 +38,6 @@
 #character{
     width: 10%;
     height: 26%;
-    border: 1px solid black;
     position: relative;
     top: 73.5%;
 }
@@ -55,3 +63,21 @@
     70%{top: 40%}
     100%{top: 73.5%}
 }
+
+/* LeaderBoard css */
+
+.leaderboard{
+    width: 30%;
+    height: 50vh;
+    border: 1px solid black;
+    left: 60%;
+    margin-left: 5%;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+
+}
+.leaderContent{ 
+    text-decoration: underline;
+}
+

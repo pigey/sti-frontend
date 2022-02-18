@@ -1,0 +1,57 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+#app{
+    width: 100%;
+    height: 100%;
+}
+#game{
+    width: 50%;
+    height: 50vh;
+    border: 1px solid black;
+    margin-top: 5%;
+    margin-left: 5%;
+}
+.timer{
+    width: 20%;
+    height: 10%;
+    border: 1px solid black;
+    position: relative;
+    left: 75%;
+    top: -30%;
+}
+#ninja{
+    width: 100%;
+    height: 100%;
+
+}
+#character{
+    width: 10%;
+    height: 26%;
+    border: 1px solid black;
+    position: relative;
+    top: 73.5%;
+}
+.animate{
+    animation: jump 500ms;
+}
+#block{
+    width: 5%;
+    height: 10%;
+    background-color: red;
+    position: relative;
+    top: 63.5%;
+    left: 95.1%;
+    animation: block 1s infinite linear;
+}
+@keyframes block{
+    0%{left:95.1%}
+    100%{left:0%}
+}
+@keyframes jump{
+    0%{top:73.5%}
+    30%{top:40%}
+    70%{top: 40%}
+    100%{top: 73.5%}
+}

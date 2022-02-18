@@ -1,16 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" onclick="jump()">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="css/index.css">
     <title>Document</title>
 </head>
 <body>
     <h1>STI-Frontend</h1>
-    <div id="app"></div>
-    <script src="js/fotboll.js"></script>
+    <div id="app">
+    <div id ="game">
+        <div id="character">
+            <img src="ninja.png" alt="character" id="ninja">
+        </div>
+        <div id="block"></div>
+        <div class="timer">
+            <h1 id="timer">0s</h1>
+        </div>
+    </div>
+    </div>
+    <script src="js/index.js"></script>
 
     
 </body>

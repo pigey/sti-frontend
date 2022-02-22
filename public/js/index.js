@@ -32,9 +32,3 @@ var checkdead = setInterval(function(){
         clearInterval(myInterval);
     }
 },10)
-
-
-
-
-
-

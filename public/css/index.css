@@ -80,5 +80,14 @@ body{
 }
 .leaderContent{ 
     text-decoration: underline;
+    
 }
+
+#leader{
+    font-size: 4vh;
+    display: inline-block;
+    text-align: center;
+    margin-top: 7%;
+    
+} 
 

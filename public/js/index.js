@@ -3,6 +3,7 @@ var block = document.getElementById("block");
 var dead = 0;
 var timer = document.getElementById("timer");
 var time = 0;
+var play = document.getElementById("tryAgain");
 block.style.animation = "none";
 //timer
  
@@ -17,6 +18,8 @@ function tryAgain(){
     time = 0
     myInterval
     myTimer();
+    play.style.display = "none";
+
     
 }
 
@@ -37,6 +40,8 @@ var checkdead = setInterval(function(){
     if (blockLeft< 51 && blockLeft > 0 && characterTop >= 215) {
         block.style.animation = "none"; 
         dead = 1;
+        play.style.display = "";
+        
        
         clearInterval(myInterval);
     }

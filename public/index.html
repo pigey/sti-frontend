@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" onclick="jump()">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1>STI-Frontend</h1>
-    <div id="app">
+    <div id="app" onclick="jump()">
         <div id ="game" style="background-image: url('game-background-min.png'); background-size: cover;">
             <div id="character">
                 <img src="ninja.png" alt="character" id="ninja">
@@ -26,7 +26,10 @@
 
                 </div>
             </div>
-        </div>
+        </div> 
+    </div>
+    <div id="tryAgain" onclick="tryAgain()">
+        <p class="againBut">Try again</p>
     </div>
     <script src="js/index.js"></script>
 

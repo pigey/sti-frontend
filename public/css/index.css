@@ -91,3 +91,16 @@ body{
     
 } 
 
+#tryAgain{
+    margin-top: 5%;
+    margin-left: 5%;
+    width: 30%;
+    height: 7vh;
+    border: 1px solid black;
+    background-color: royalblue;
+}
+.againBut{
+    font-size: 5vh;
+    text-align: center;
+}
+

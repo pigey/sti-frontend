@@ -3,14 +3,23 @@ var block = document.getElementById("block");
 var dead = 0;
 var timer = document.getElementById("timer");
 var time = 0;
-
+block.style.animation = "none";
 //timer
-const myInterval = setInterval(myTimer,1000);
+ 
 
 function myTimer(){
     time = time + 1;
     timer.innerHTML = time + "s";
 }
+function tryAgain(){
+    myInterval = setInterval(myTimer,1000);
+    block.style.animation = "";
+    time = 0
+    myInterval
+    myTimer();
+    
+}
+
 //Character jump animation
 function jump(){
     if (character.classList !="animate") {
@@ -27,11 +36,13 @@ var checkdead = setInterval(function(){
     
     if (blockLeft< 51 && blockLeft > 0 && characterTop >= 215) {
         block.style.animation = "none"; 
-        alert("dead");
         dead = 1;
+       
         clearInterval(myInterval);
     }
 },10)
+
+
 
 
 

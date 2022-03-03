@@ -41,29 +41,29 @@ var checkdead = setInterval(function(){
         block.style.animation = "none"; 
         dead = 1;
         play.style.display = "";
-        
+        // update leaderboard if you made it there
        
         clearInterval(myInterval);
     }
 },10)
 
 
+const UPDATE_FIRST = 0;
+const UPDATE_INTERVAL = 5000;
 
+setTimeout(highscore,UPDATE_FIRST);
 
-
-
-
-
-
-
-    console.log("Running age")
+function highscore(){
     var xhr = new XMLHttpRequest()
     xhr.open("GET", "/js/scores.json")
     xhr.onload = function(){
-        var data = JSON.parse(this.response)
-        createTable(data)
+    let data = JSON.parse(this.response)
+    createTable(data)
+    //setTimeout(highscore,UPDATE_INTERVAL)
     }
     xhr.send()
+}
+
 
 
 function createTable(data){

@@ -62,7 +62,7 @@ setTimeout(highscore,UPDATE_FIRST);
 
 function highscore(){
     var xhr = new XMLHttpRequest()
-    xhr.open("GET", "http://filip-backend.herokuapp.com/highscores")
+    xhr.open("GET", "filip-backend.herokuapp.com/highscores")
     //xhr.open("GET", "http://localhost:3001/highscores")
     //xhr.open("GET", "/js/scores.json")
     xhr.onload = function(){
@@ -75,7 +75,7 @@ function highscore(){
 
 function registerhighscore(user, score){
     var xhr = new XMLHttpRequest()
-    xhr.open("GET", "http://filip-backend.herokuapp.com/register?user="+ user + "&time="+ score)
+    xhr.open("GET", "filip-backend.herokuapp.com/register?user="+ user + "&time="+ score)
     //xhr.open("GET", "http://localhost:3001/register?user=" + user + "&time=" + score)
     //xhr.open("GET", "/js/scores.json")
     xhr.send()

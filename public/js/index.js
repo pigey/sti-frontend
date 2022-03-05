@@ -5,12 +5,11 @@ var timer = document.getElementById("timer");
 var time = 0;
 var play = document.getElementById("tryAgain");
 block.style.animation = "none";
-var fname;
+var fname = "user";
 //timer
 
 function getval(){
-    var name = "user";
-    name = document.querySelector('input').value;
+    var name = document.querySelector('input').value;
    
     fname = name.replace(/\s/g, '');
 }

@@ -50,6 +50,9 @@ var checkdead = setInterval(function(){
         dead = 1;
         play.style.display = "";
         // update leaderboard if you made it there
+        if(fname == ""){
+            fname = "user";
+        }
         registerhighscore(fname,time)
        
         clearInterval(myInterval);

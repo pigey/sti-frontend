@@ -10,6 +10,9 @@ var fname;
 
 function getval(){
     var name = document.querySelector('input').value;
+    if (name == null){
+        name = "user";
+    }
     fname = name.replace(/\s/g, '');
 }
 

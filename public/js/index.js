@@ -14,7 +14,7 @@ function getval(){
         name = "user"
     }
     fname = name.replace(/\s/g, '');
-    fname.toLowerCase();
+    
 }
 
 function myTimer(){

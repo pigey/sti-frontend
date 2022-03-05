@@ -10,6 +10,16 @@
 <body>
     <h1>STI-Frontend</h1>
     <div id="app" onclick="jump()">
+        <div id="tryAgain">
+            <div id="user">
+                <form>
+                    <input type="text" id="fname" name="fname" placeholder="User" onblur="getval()">
+                </form>
+            </div>
+            <div onclick="tryAgain()">
+                <p class="againBut">Play</p>
+            </div>
+        </div>
         <div id ="game" style="background-image: url('game-background-min.png'); background-size: cover;">
             <div id="character">
                 <img src="ninja.png" alt="character" id="ninja">
@@ -27,9 +37,6 @@
                 </div>
             </div>
         </div> 
-    </div>
-    <div id="tryAgain" onclick="tryAgain()">
-        <p class="againBut">Play</p>
     </div>
     <script src="js/index.js"></script>
 

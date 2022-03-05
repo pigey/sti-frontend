@@ -5,23 +5,29 @@ var timer = document.getElementById("timer");
 var time = 0;
 var play = document.getElementById("tryAgain");
 block.style.animation = "none";
+var fname;
 //timer
- 
+
+function getval(){
+    fname = document.querySelector('input').value;
+}
 
 function myTimer(){
     time = time + 1;
     timer.innerHTML = time + "s";
 }
 function tryAgain(){
+    registerhighscore(fname,time)
     myInterval = setInterval(myTimer,1000);
     block.style.animation = "";
     time = 0
     myInterval
     myTimer();
     play.style.display = "none";
-
     
 }
+
+
 
 //Character jump animation
 function jump(){
@@ -49,18 +55,26 @@ var checkdead = setInterval(function(){
 
 
 const UPDATE_FIRST = 0;
-const UPDATE_INTERVAL = 5000;
+const UPDATE_INTERVAL = 1000;
 
 setTimeout(highscore,UPDATE_FIRST);
 
 function highscore(){
     var xhr = new XMLHttpRequest()
-    xhr.open("GET", "/js/scores.json")
+    xhr.open("GET", "http://localhost:3001/highscores")
+    //xhr.open("GET", "/js/scores.json")
     xhr.onload = function(){
-    let data = JSON.parse(this.response)
-    createTable(data)
-    //setTimeout(highscore,UPDATE_INTERVAL)
+        let data = JSON.parse(this.response)
+        createTable(data)
+        setTimeout(highscore, UPDATE_INTERVAL)
     }
+    xhr.send()
+}
+
+function registerhighscore(user, score){
+    var xhr = new XMLHttpRequest()
+    xhr.open("GET", "http://localhost:3001/register?user=" + user + "&score=" + score)
+    //xhr.open("GET", "/js/scores.json")
     xhr.send()
 }
 
@@ -68,13 +82,16 @@ function highscore(){
 
 function createTable(data){
     var appElement = document.getElementById("leader")
+    appElement.textContent = ""
     console.log(appElement)
     var aTable = document.createElement("table")
+    
     appElement.appendChild(aTable)
-    aTable.appendChild(createRow(data[0].name, data[0].time))
-    aTable.appendChild(createRow(data[1].name, data[1].time))
-    aTable.appendChild(createRow(data[2].name, data[2].time))
-    aTable.appendChild(createRow(data[3].name, data[3].time))
+
+    for([value, key] of Object.entries(data)){
+        console.log(key + "->" + value)
+        aTable.appendChild(createRow(key, value))
+    }
     console.log(aTable)
 }
 function createRow(name, time){

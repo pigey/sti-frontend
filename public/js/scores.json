@@ -1,18 +1,1 @@
-[
-    {
-        "name": "bob",
-        "time": 300
-    },
-    {
-        "name": "jake",
-        "time": 240
-    },
-    {
-        "name": "robert",
-        "time": 200
-    },
-    {
-        "name": "pelle",
-        "time": 100
-    }
-]
+{"Filip":"50","Mikael":"150","Anna":"30"}

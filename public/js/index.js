@@ -9,10 +9,9 @@ var fname;
 //timer
 
 function getval(){
-    var name = document.querySelector('input').value;
-    if (name === undefined){
-        name = "user";
-    }
+    var name = "user";
+    name = document.querySelector('input').value;
+   
     fname = name.replace(/\s/g, '');
 }
 

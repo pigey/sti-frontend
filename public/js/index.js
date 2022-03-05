@@ -9,7 +9,8 @@ var fname;
 //timer
 
 function getval(){
-    fname = document.querySelector('input').value;
+    name = document.querySelector('input').value;
+    fname = name.replace(/\s/g, '');
 }
 
 function myTimer(){
@@ -68,7 +69,7 @@ function highscore(){
     xhr.onload = function(){
         let data = JSON.parse(this.response)
         createTable(data)
-        setTimeout(highscore, UPDATE_INTERVAL)
+        setTimeout(highscore, UPDATE_INTERVAL) 
     }
     xhr.send()
 }

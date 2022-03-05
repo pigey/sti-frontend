@@ -9,7 +9,7 @@ var fname;
 //timer
 
 function getval(){
-    name = document.querySelector('input').value;
+    var name = document.querySelector('input').value;
     fname = name.replace(/\s/g, '');
 }
 

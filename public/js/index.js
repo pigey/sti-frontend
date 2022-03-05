@@ -17,7 +17,7 @@ function myTimer(){
     timer.innerHTML = time + "s";
 }
 function tryAgain(){
-    registerhighscore(fname,time)
+    
     myInterval = setInterval(myTimer,1000);
     block.style.animation = "";
     time = 0
@@ -48,6 +48,7 @@ var checkdead = setInterval(function(){
         dead = 1;
         play.style.display = "";
         // update leaderboard if you made it there
+        registerhighscore(fname,time)
        
         clearInterval(myInterval);
     }
@@ -73,12 +74,20 @@ function highscore(){
 
 function registerhighscore(user, score){
     var xhr = new XMLHttpRequest()
-    xhr.open("GET", "http://localhost:3001/register?user=" + user + "&score=" + score)
+    xhr.open("GET", "http://localhost:3001/register?user=" + user + "&time=" + score)
     //xhr.open("GET", "/js/scores.json")
     xhr.send()
 }
 
 
+function gettopfiveSorted(data){
+    var items = Object.entries(data)
+    items.sort(function(first, second){
+        return second[1] - first[1];
+    })
+    items = items.slice(0, 5);
+    return items;
+}
 
 function createTable(data){
     var appElement = document.getElementById("leader")
@@ -88,7 +97,8 @@ function createTable(data){
     
     appElement.appendChild(aTable)
 
-    for([value, key] of Object.entries(data)){
+    var items = gettopfiveSorted(data);
+    for([value, key] of items){
         console.log(key + "->" + value)
         aTable.appendChild(createRow(key, value))
     }
